@@ -1,0 +1,7 @@
+{
+  "locales": ["en", "km"],
+  "defaultLocale": "en",
+  "pages": {
+    "*": ["common"]
+  }
+}

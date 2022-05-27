@@ -1,0 +1,252 @@
+@import './breakpoints';
+
+// NOTE: to view values go to https://www.sassmeister.com and then copy paste the loop, this will show all the available classes
+
+// -----------------------------------------------------------------------------------------------------
+// @ font weight  important helpers
+// -----------------------------------------------------------------------------------------------------
+@for $weight from 1 through 9 {
+  .font-w-#{$weight * 100} {
+    font-weight: #{$weight * 100};
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ font helpers
+// -----------------------------------------------------------------------------------------------------
+@for $size from 1 through 100 {
+  .font-#{$size} {
+    font-size: #{$size}px;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ word spacer
+// -----------------------------------------------------------------------------------------------------
+@for $index from 1 through 100 {
+  .line-h-#{$index} {
+    line-height: #{$index}px;
+  }
+
+  .word-s-#{$index} {
+    word-spacing: #{$index}px;
+  }
+
+  .letter-s-#{$index} {
+    letter-spacing: #{$index}px;
+  }
+
+  .gap-#{$index} {
+    gap: #{$index}px;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Spacing helpers
+// -----------------------------------------------------------------------------------------------------
+@each $breakpoint, $materialBreakpoint in $helper-breakpoints {
+  @include media-breakpoint($materialBreakpoint) {
+    $infix: if($materialBreakpoint==null, '', '-#{$breakpoint}');
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @for $index from 0 through 120 {
+        $size: $index * 4;
+        $length: #{$size}px;
+
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+      }
+
+      @for $index from 0 through 120 {
+        $size: $index * 4;
+        $length: #{$size}px;
+
+        .#{$abbrev}-x#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+          #{$prop}-left: $length !important;
+        }
+
+        .#{$abbrev}-y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+          #{$prop}-bottom: $length !important;
+        }
+
+        // Negative Margins
+        @if ($abbrev==m) {
+          .#{$abbrev}-x#{$infix}-#{$size}-neg {
+            #{$prop}-right: -$length !important;
+            #{$prop}-left: -$length !important;
+          }
+
+          .#{$abbrev}-y#{$infix}-#{$size}-neg {
+            #{$prop}-top: -$length !important;
+            #{$prop}-bottom: -$length !important;
+          }
+        }
+      }
+
+      @for $index from 0 through 120 {
+        $size: $index * 4;
+        $length: #{$size}px;
+
+        .#{$abbrev}-t#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+
+        .#{$abbrev}-r#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+
+        .#{$abbrev}-b#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+
+        .#{$abbrev}-l#{$infix}-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+
+        // Negative Margins
+        @if ($abbrev==m) {
+          .#{$abbrev}-t#{$infix}-#{$size}-neg {
+            #{$prop}-top: -$length !important;
+          }
+
+          .#{$abbrev}-r#{$infix}-#{$size}-neg {
+            #{$prop}-right: -$length !important;
+          }
+
+          .#{$abbrev}-b#{$infix}-#{$size}-neg {
+            #{$prop}-bottom: -$length !important;
+          }
+
+          .#{$abbrev}-l#{$infix}-#{$size}-neg {
+            #{$prop}-left: -$length !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Size helpers
+// -----------------------------------------------------------------------------------------------------
+@each $prop, $abbrev in (height: height, width: width) {
+  // 3 in one (length & min & max)
+  @for $index from 0 through 180 {
+    $size: $index * 4;
+    $length: #{$size}px;
+
+    .#{$abbrev}-#{$size} {
+      #{$prop}: $length !important;
+      min-#{$prop}: $length !important;
+      max-#{$prop}: $length !important;
+    }
+  }
+
+  // Percentage
+  @for $i from 0 through 20 {
+    $i-p: 5 * $i;
+    $size-p: 5% * $i;
+
+    .#{$abbrev}-#{$i-p}-p {
+      #{$prop}: $size-p !important;
+    }
+
+    .#{$abbrev}-#{$i-p}-max {
+      max-#{$prop}: $size-p !important;
+    }
+
+    .#{$abbrev}-#{$i-p}-min {
+      min-#{$prop}: $size-p !important;
+    }
+  }
+
+  // specific
+  @for $index from 0 through 180 {
+    $size: $index * 4;
+    $length: #{$size}px;
+
+    .only-#{$abbrev}-#{$size} {
+      #{$prop}: $length !important;
+    }
+
+    .only-min-#{$abbrev}-#{$size} {
+      min-#{$prop}: $length !important;
+    }
+
+    .only-max-#{$abbrev}-#{$size} {
+      max-#{$prop}: $length !important;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Clamp helpers
+// -----------------------------------------------------------------------------------------------------
+@for $lines from 1 through 20 {
+  .clamp-#{$lines} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: #{$lines};
+    -webkit-box-orient: vertical;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Clamp with animation
+// -----------------------------------------------------------------------------------------------------
+
+@for $lines from 1 through 20 {
+  .clamp-#{$lines}-animate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    animation: close-#{$lines} 0.1s linear 0.1s forwards;
+  }
+
+  .open .clamp-#{$lines}-animate {
+    animation: open-#{$lines} 0.1s linear 0s forwards;
+  }
+
+  @keyframes open-#{$lines} {
+    from {
+      -webkit-line-clamp: #{$lines};
+    }
+    to {
+      -webkit-line-clamp: initial;
+    }
+  }
+
+  @keyframes close-#{$lines} {
+    from {
+      -webkit-line-clamp: initial;
+    }
+    to {
+      -webkit-line-clamp: #{$lines};
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Browser vender
+// -----------------------------------------------------------------------------------------------------
+
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ view height spacer
+// -----------------------------------------------------------------------------------------------------
+@for $size from 1 through 100 {
+  .h-#{$size}-vh {
+    height: #{$size}vh;
+  }
+}

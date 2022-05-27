@@ -1,0 +1,100 @@
+@use './variables' as *;
+
+/*====================
+    color
+====================*/
+
+$colorNames: (
+  'active': $troy-blue,
+  'black': $black,
+  'blocked': $persian-red,
+  'blue': $troy-blue,
+  'delete': $persian-red,
+  'ended': $persian-red,
+  'file-extension': $ext-file,
+  'icon': $waterloo,
+  'img-extension': $ext-img,
+  'inactive': $dove-gray,
+  'link': $troy-blue,
+  'main-red': $persian-red,
+  'on': $troy-blue,
+  'pending': $camarone,
+  'planning': $camarone,
+  'reject': $persian-red,
+  'vdo-extension': $ext-video,
+  'white': $white,
+  'wild-sand': $wild-sand,
+);
+
+// -----------------------------------------------------------------------------------------------------
+// @ color  helpers
+// -----------------------------------------------------------------------------------------------------
+@each $name, $color in $colorNames {
+  // selector based on name
+  .color-#{$name} {
+    color: $color !important;
+  }
+
+  .bg-gradient-#{$name} {
+    background-color: #{$color}50;
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+/*====================
+    background
+====================*/
+.bg {
+  &-main-red {
+    background-color: $persian-red !important;
+  }
+
+  &-concrete {
+    background-color: $concrete !important;
+  }
+
+  &-client {
+    &-filter-container {
+      background-color: $white-lilac;
+    }
+  }
+
+  &-white {
+    background-color: $white;
+  }
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(90deg, #11c1f1 0%, #0038de 100%);
+}
+
+.bg-gradient-green {
+  background: linear-gradient(
+    90deg,
+    rgba(67, 204, 105, 0.95) 0%,
+    rgba(0, 90, 44, 0.95) 100%
+  );
+}
+
+.bg-gradient-red {
+  background: linear-gradient(90deg, #ec4234 0%, #a81200 100%);
+}
+
+.bg-gradient-light-blue {
+  background: $bg-gradient-light-blue;
+}
+
+.bg-gradient-light-green {
+  background: $bg-gradient-light-green;
+}
+
+.bg-gradient-light-orange {
+  background: $bg-gradient-light-orange;
+}
+
+.bg-gradient-light-gray {
+  background: $bg-gradient-light-gray;
+}

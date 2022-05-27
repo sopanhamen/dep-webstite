@@ -1,0 +1,17 @@
+// component pillar
+.bg-overlay {
+  &::after {
+    content: '';
+    background-color: $color-light-white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.bg-sector {
+  background: $color-light-gray;
+  border-bottom: 1px solid $alto;
+}

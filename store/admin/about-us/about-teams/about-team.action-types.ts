@@ -1,0 +1,5 @@
+export const aboutTeamTypes = {
+  SET_LOADING: 'SET_LOADING',
+  GET_ABOUT_TEAMS: 'GET_ABOUT_TEAMS',
+  SET_FILTER: 'SET_FILTER',
+};

@@ -1,0 +1,29 @@
+/*----------------------------------------------------------------*/
+/*  @ Text rendering & box sizing
+/*----------------------------------------------------------------*/
+* {
+  text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -webkit-text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+
+  // Remove focus outline
+  &:focus {
+    outline: none;
+  }
+}
+
+.truncate {
+  width: 150px;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

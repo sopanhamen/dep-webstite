@@ -1,0 +1,261 @@
+@use '../../abstract/variables' as *;
+@use '../../abstract/breakpoints';
+@use '../../abstract/mixins' as *;
+
+$x-small: map-get(breakpoints.$breakpoints, 'xs');
+
+@keyframes loading {
+  0% {
+    transform: skewX(-10deg) translateX(-100%);
+  }
+  100% {
+    transform: skewX(-10deg) translateX(150%);
+  }
+}
+
+section {
+  &.project,
+  &.resouce-hub {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media #{$x-small} {
+      justify-content: center;
+    }
+
+    .project-container {
+      border-bottom: 2px solid $alto;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 539px;
+      padding: 20px 0px;
+
+      .image-container {
+        max-width: 113px;
+        min-width: 113px;
+        z-index: 2;
+
+        @media #{$x-small} {
+          max-width: 100%;
+          min-width: 100%;
+          margin-right: 0 !important;
+
+          & > div {
+            width: 100%;
+          }
+        }
+
+        .image-common {
+          border-radius: 3px;
+          height: 113px;
+          width: 148px;
+        }
+
+        img {
+          object-fit: cover;
+
+          @extend .image-common;
+        }
+
+        &__skeleton {
+          background: $gallery;
+          position: relative;
+
+          @extend .image-common;
+
+          @media #{$x-small} {
+            width: 100% !important;
+            margin-bottom: 10px;
+          }
+
+          &::before {
+            @include before-skeleton(0);
+          }
+        }
+      }
+
+      .information {
+        &__title {
+          color: $troy-blue;
+        }
+        &__status {
+          border-radius: 5px;
+          border-radius: 3px;
+          line-height: 1;
+          padding: 5px;
+        }
+
+        &__title-skeleton {
+          border-radius: 5px;
+
+          @include common-skeleton(18px);
+
+          &::before {
+            @include before-skeleton(5px);
+          }
+        }
+
+        &__description {
+          width: 375px;
+          max-height: 200px;
+          overflow: hidden;
+          transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+
+          @media #{$x-small} {
+            width: 100%;
+          }
+
+          &.open {
+            max-height: 100rem;
+            transition: max-height 0.3s cubic-bezier(0.9, 0, 0.8, 0.2);
+          }
+
+          P {
+            color: $mine-shaft;
+          }
+        }
+
+        &__description-skeleton {
+          border-radius: 5px;
+
+          @include common-skeleton(45px);
+
+          &::before {
+            @include before-skeleton(5px);
+          }
+        }
+
+        &__tags {
+          display: flex;
+          .common {
+            border-radius: 3px;
+            line-height: 1;
+            padding: 5px;
+          }
+
+          // colors of the tags
+          $tags: (
+            'citizen': $camarone,
+            'government': $science-blue,
+            'business': $bright-red,
+          );
+
+          @each $name, $color in $tags {
+            &__#{$name} {
+              align-items: center;
+              background-color: rgba($color, 0.15);
+              display: flex;
+              margin-right: 10px;
+
+              @extend .common;
+
+              p {
+                color: $color;
+              }
+            }
+          }
+
+          &__citizen {
+            align-items: center;
+            background-color: rgba($camarone, 0.15);
+            display: flex;
+            margin-right: 10px;
+
+            @extend .common;
+
+            p {
+              color: $camarone;
+            }
+          }
+
+          &__citizen-skeleton {
+            border-radius: 5px;
+            min-width: 72px;
+
+            @include common-skeleton(21px);
+
+            &::before {
+              @include before-skeleton(5px);
+            }
+
+            @media #{$x-small} {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+            }
+          }
+
+          &__date {
+            display: flex;
+            background-color: $concrete;
+
+            @extend .common;
+
+            .fa-clock-o {
+              color: $black-pearl;
+              margin-right: 5px;
+              margin-top: -1.5px;
+            }
+
+            p {
+              color: $black-pearl;
+            }
+
+            @media #{$x-small} {
+              margin: auto 0px;
+
+              P {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+              }
+
+              .fa-clock-o {
+                margin: auto 3px auto 0px;
+              }
+            }
+          }
+
+          &__date-skeleton {
+            border-radius: 5px;
+            min-width: 162px;
+            @include common-skeleton(21px);
+
+            &::before {
+              @include before-skeleton(5px);
+            }
+          }
+
+          .read {
+            background: white;
+            position: absolute;
+            right: 0px;
+            cursor: pointer;
+
+            &--more {
+              top: -25px;
+
+              span {
+                color: $persian-red;
+              }
+            }
+
+            &--less {
+              top: 0;
+              color: $persian-red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.resouce-hub {
+    display: flex;
+
+    .project-container {
+      flex-wrap: nowrap !important;
+      width: 100%;
+    }
+  }
+}

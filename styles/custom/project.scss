@@ -1,0 +1,30 @@
+.project-details-container {
+  margin: 20px;
+  background-color: $white;
+  border-radius: 7px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $silver;
+    padding: 10px;
+
+    .center {
+      gap: 10px;
+    }
+
+    i {
+      color: $troy-blue;
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 18px;
+    }
+  }
+
+  &__body {
+    padding: 20px;
+  }
+}

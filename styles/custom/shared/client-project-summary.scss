@@ -1,0 +1,150 @@
+@use '../../abstract/variables' as *;
+@use '../../abstract/skeleton';
+
+.client-project-summary {
+  .summary {
+    &-img {
+      min-height: 140.38px;
+      max-height: 161.38px;
+    }
+
+    &-title {
+      text-decoration: none;
+
+      h1 {
+        @extend .cursor-link;
+        @extend .font-16;
+        @extend .clamp-2;
+        color: $troy-blue;
+      }
+    }
+
+    &-info {
+      position: relative;
+
+      &__description {
+        @extend .clamp-3;
+      }
+
+      &__read-more {
+        position: absolute;
+        padding-left: 1px;
+        right: 0;
+        bottom: 0;
+        background-color: $white;
+
+        &__text {
+          @extend .cursor-link;
+          @extend .color-main-red;
+        }
+      }
+    }
+  }
+}
+
+.client-pillars-tab {
+  @extend .font-16;
+  background-color: rgba($persian-red, 0.05);
+
+  &.section-admin-tabs {
+    background-color: $white !important;
+
+    &.borderColor {
+      border-bottom: 1px solid;
+      border-color: $cinnabar !important;
+      padding-bottom: 1px;
+    }
+
+    .nav-item {
+      padding-left: 0;
+      padding-right: 13px;
+
+      button {
+        padding: 10px 0;
+        border: 0;
+        color: $black !important;
+        position: relative;
+
+        &::after {
+          display: inline-block;
+          content: '';
+          border-bottom: 2px solid $persian-red;
+          width: 0;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+
+        &.active {
+          color: $troy-blue !important;
+          font-weight: bold;
+
+          &::after {
+            transition: all 0.5s;
+            width: calc(100%);
+          }
+        }
+      }
+    }
+  }
+
+  .tab {
+    color: rgba($dove-gray, 0.8);
+    padding: 13px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      color: $dove-gray;
+    }
+
+    &::after {
+      display: inline-block;
+      content: '';
+      border-bottom: 2px solid $persian-red;
+      width: 0;
+      position: absolute;
+      bottom: 0;
+      left: 13px;
+    }
+
+    &.active {
+      color: $troy-blue;
+
+      &::after {
+        transition: all 0.5s;
+        width: calc(100% - 26px);
+      }
+    }
+  }
+}
+
+.client-project-skeleton {
+  .skeleton {
+    &-img {
+      @extend.common-skeleton;
+      min-height: 158.38px;
+    }
+
+    &-title {
+      @extend.common-skeleton;
+      min-height: 20px;
+    }
+
+    &-info {
+      div {
+        @extend.common-skeleton;
+        min-height: 21px;
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    &-pillar {
+      @extend.common-skeleton;
+      min-height: 18px;
+      width: 90px;
+      display: inline-block;
+    }
+  }
+}

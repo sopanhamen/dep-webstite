@@ -1,0 +1,114 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+section {
+  .about-dep {
+    margin: 60px auto;
+
+    h1 {
+      font: {
+        size: 30px;
+        weight: 700;
+      }
+    }
+
+    &__top {
+      color: $black;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      min-height: 366px;
+      width: 100%;
+      gap: 5em;
+
+      @media screen and (max-width: 80em) {
+        grid-template-columns: 1fr;
+        place-items: center;
+      }
+
+      img {
+        border-radius: 3px;
+      }
+    }
+
+    &__bottom {
+      .slick-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .info {
+        border-radius: 3px;
+        height: 355.33px;
+        margin: 20px;
+        width: 355.33px !important;
+
+        &__content {
+          text-align: center;
+          position: relative;
+          padding: 12em 12em;
+          transition: transform 3s;
+          transform-style: preserve-3d;
+        }
+
+        &__logo,
+        &__back {
+          position: absolute;
+          inset: 0;
+          padding: 5em 3em;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
+          display: grid;
+          align-content: center;
+        }
+
+        &__logo {
+          background-size: cover;
+          background-blend-mode: overlay;
+
+          .image-wrapper {
+            order: 2;
+            transform: translateZ(3rem);
+
+            img {
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            inset: 1em;
+            transform: 1em;
+          }
+        }
+
+        &__icon {
+          color: $white;
+          font-size: 4rem;
+          order: 2;
+          transform: translateZ(3rem);
+        }
+
+        &__back {
+          background-color: $science-blue;
+          color: $white;
+          transform: rotateY(0.5turn);
+
+          p {
+            color: $manatee;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.6;
+            transform: translateZ(6rem);
+          }
+        }
+      }
+
+      .info:hover .info__content {
+        transform: rotateY(0.5turn);
+      }
+    }
+  }
+}

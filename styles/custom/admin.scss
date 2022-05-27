@@ -1,0 +1,145 @@
+@use '../abstract/variables' as *;
+
+#sidebar {
+  background: $color-light-blue;
+  color: $white;
+  min-height: 100vh;
+  max-width: 250px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  transition: 1s;
+  z-index: 1;
+  &.customMenu {
+    left: 0;
+  }
+
+  .closeIcone {
+    position: absolute;
+    right: 10px;
+  }
+
+  .sidebar-header {
+    height: 65px;
+    background: $troy-blue;
+    padding-left: 1.75rem;
+
+    &.nav-active {
+      background: $persian-red;
+      border-radius: 3px;
+    }
+  }
+
+  .nav-list {
+    max-height: calc(100vh - 75px);
+    height: 100%;
+    overflow-y: auto;
+    direction: rtl;
+
+    .components {
+      direction: ltr;
+
+      li {
+        .nav {
+          background: $bg-light-gray;
+          height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          &.navShow {
+            height: 100%;
+          }
+        }
+
+        a {
+          color: $white;
+          text-decoration: none;
+          padding: 0.75rem;
+          width: 100%;
+          display: block;
+          position: relative;
+          cursor: pointer;
+
+          &.nav-active {
+            background: $persian-red;
+            border-radius: 3px;
+          }
+
+          .arrow-filter {
+            position: absolute;
+            top: 0.75rem;
+            right: 0;
+            transition: all 0.3s ease-in-out;
+          }
+
+          .arrow-down {
+            .arrow-filter {
+              transform: rotate(0deg);
+            }
+          }
+
+          .arrow-up {
+            .arrow-filter {
+              top: 0.3rem;
+              right: 0.55rem;
+              transform: rotate(-180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#page-content-wrapper {
+  background: $alabaster;
+  width: 100%;
+  overflow-x: hidden;
+  margin-left: 250px;
+  transition: 1s;
+
+  .bg-navbar-top {
+    height: 65px;
+    background-color: $troy-blue;
+    color: $white;
+
+    .dropdown-toggle {
+      display: flex;
+      position: relative;
+      background: transparent;
+      border-color: transparent;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        top: 45%;
+      }
+
+      &:focus {
+        border-color: transparent;
+      }
+    }
+  }
+
+  .page-content {
+    height: calc(100vh - 75px);
+    border: 0.5px solid $alto;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+}
+
+.break-word {
+  word-break: break-word;
+  white-space: break-spaces;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  #sidebar {
+    left: -250px;
+  }
+
+  #page-content-wrapper {
+    margin-left: 0 !important;
+  }
+}

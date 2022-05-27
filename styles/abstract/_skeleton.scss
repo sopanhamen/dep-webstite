@@ -1,0 +1,38 @@
+@use './variables' as *;
+
+@keyframes skeleton-loading {
+  0% {
+    transform: skewX(-10deg) translateX(-100%);
+  }
+  100% {
+    transform: skewX(-10deg) translateX(150%);
+  }
+}
+
+.before-common-skeleton {
+  animation: skeleton-loading 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  z-index: 1;
+}
+
+.common-skeleton {
+  background: $gallery;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    @extend .before-common-skeleton;
+  }
+}

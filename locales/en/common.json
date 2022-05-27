@@ -1,0 +1,160 @@
+{
+  "header": {
+    "about": "About Us",
+    "de": "DE Progress Tracker",
+    "home": "Home",
+    "news": "News",
+    "project": "Project",
+    "projects": "Projects",
+    "resource": "Resource Hub",
+    "signUp": "Sign Up"
+  },
+
+  "report": {
+    "name": "Name is required",
+    "phone": "Phone is required",
+    "comment": {
+      "title": "Comment",
+      "required": "Comment is required"
+    }
+  },
+
+  "footer": {
+    "disclaimer": "Disclaimer:",
+    "description": "The information contained in this site is provided for informational purposes only, and should not be construed as legal advice on any subject matter. You should not act or refrain from acting on the basis of any content included in this site without seeking legal or other professional advice.",
+    "report": "Report An Issue",
+    "follow": "Follow us on",
+    "characters_left": "Characters left"
+  },
+
+  "pillars": {
+    "digital": "Digital",
+    "government": "Government",
+    "citizen": "Citizen",
+    "business": "Business"
+  },
+
+  "buttons": {
+    "back": "Back",
+    "to": "to",
+    "top": "top",
+    "show_all": "Show all",
+    "submit": "Submit"
+  },
+
+  "dep_help": {
+    "title": "WHAT DIGITAL ECONOMY CAN HELP",
+    "description": "The envisioned e-portal will be the first of it's kind in the country and is developed with two objectives",
+    "objective_one": "To Help stakeholders track Cambodia's progress on its transformation towards a full digital economy",
+    "objective_two": "Become a one-stop platform to provide easy access to localized resources on digital economy."
+  },
+
+  "find_us": {
+    "title": "Where to find us",
+    "form": {
+      "title": "What's on your mind? Send Us an Email",
+      "name": "Your name",
+      "message": "Message",
+      "email": "Your Email",
+      "submit": "Submit"
+    },
+    "contact_us": "Contact Us",
+    "location": "Open Development Cambodia Location"
+  },
+
+  "de_government": {
+    "e-goverment": "E-Goverment",
+    "open_government_data": "Open Government Data",
+    "WSIS": "WSIS",
+    "good_practices": "Good Practices"
+  },
+
+  "about_us": {
+    "digital_economy": "ABOUT DIGITAL ECONOMY",
+    "our_team": "ABOUT OUR TEAM"
+  },
+
+  "event": {
+    "end": "Ends:",
+    "location": "Location:",
+    "showLess": "Show Less",
+    "showMore": "Show more",
+    "start": "Starts:",
+    "zoom": "Zoom Meeting:"
+  },
+
+  "related": {
+    "related_news": "Related News",
+    "related_resource_hub": "Related Resource Hub",
+    "related_project": "Related Project"
+  },
+
+  "project": {
+    "project_name": "Project Name",
+    "sector": "Sector",
+    "project_duration": "Project Duration",
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "status": "Status",
+    "pillar": "Pillar",
+    "project_owner": "Project Owner",
+    "implement_partner": "Implement Partner"
+  },
+
+  "download": {
+    "file_download": "File download",
+    "download_free": "Download free",
+    "download_now": "Download Now",
+    "Downloading": "Downloading",
+    "view_file": "View File"
+  },
+
+  "filter": {
+    "search": "Search",
+    "sort": "Sort",
+    "filter": "Filter",
+    "reset_filter": "Reset Filter",
+    "date": "Date",
+    "from": "From",
+    "to": "To",
+    "advanced_filters": "Advanced Filters",
+    "all": "All",
+    "digital_government": "Digital Government",
+    "digital_citizen": "Digital Citizen",
+    "digital_business": "Digital Business",
+    "last_7_days": "Last 7 Days",
+    "this_month": "This Month",
+    "last_month": "Last Month",
+    "last_3_months": "Last 3 Months",
+    "last_6_months": "Last 6 Months",
+    "this_year": "This Year",
+    "last_year": "Last Year",
+    "custom": "Custom",
+    "created_on": "Created On",
+    "published_on": "Published On"
+  },
+
+  "sign_up": {
+    "full_name": "Full Name",
+    "email": "Email",
+    "phone_number": "Phone Number",
+    "organization_name": "Organization Name",
+    "organization_type": "Organization Type",
+    "pillar": "Pillar",
+    "sector": "Sector",
+    "link_to_website": "Link to Website",
+    "purpose": "Purpose",
+    "characters_left": "Characters left"
+  },
+
+  "resourceHub": {
+    "published_by": "Published by",
+    "publice_date": "Publice Date",
+    "available_language_for_download": "Available Language for Download",
+    "resource_from": "Resource From",
+    "stakeholders": "Stakeholders",
+    "available_file_for_download": "Available File for Download",
+    "general_meta_data_fields": "General meta data fields",
+    "explore_more": "Explore More"
+  }
+}

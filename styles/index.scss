@@ -1,0 +1,99 @@
+@use './abstract/variables' as *;
+
+@import './abstract/general';
+@import './abstract/helpers';
+@import './custom/index.scss';
+
+@import '~bootstrap/dist/css/bootstrap.css';
+@import 'react-datepicker/dist/react-datepicker.css';
+@import './custom/component';
+@import './abstract/color';
+@import 'font-awesome';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Nokora:wght@400;700&display=swap');
+
+@font-face {
+  font-family: Helvetica;
+  src: url('./fonts/Helvetica.ttf');
+}
+
+@font-face {
+  font-family: Helvetica;
+  font-weight: bold;
+  src: url('./fonts/Helvetica-Bold.ttf');
+}
+
+body {
+  font-family: 'Helvetica', 'Nokora', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cursor {
+  &-pointer {
+    cursor: pointer !important;
+  }
+
+  &-link {
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+// reset
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.web-main-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+// prevent dragging of images
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.tooltip-inner {
+  max-width: 500px !important;
+}
+
+.react-datepicker-popper {
+  z-index: 2;
+}

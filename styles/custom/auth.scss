@@ -1,0 +1,80 @@
+/*================
+    auth layout
+=================*/
+@use '../abstract/variables' as *;
+
+.auth-layout {
+  background: $troy-blue;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .auth-card {
+    background: $white;
+    width: 450px;
+    border-radius: 7px;
+    padding: 50px 70px;
+    position: relative;
+
+    @media screen and (max-width: 567px) {
+      width: 80%;
+      padding: 50px 5%;
+    }
+  }
+}
+
+.forget-pwd-link {
+  color: $persian-red;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    color: $troy-blue;
+  }
+}
+
+.forgot-pwd-title {
+  font-size: 20px;
+  color: $troy-blue;
+}
+
+.text {
+  font-size: 12px;
+  font-weight: bold;
+
+  &--forgot-pwd-text {
+    color: $oslo-gray;
+    margin-bottom: 50px;
+  }
+
+  &--back-text {
+    color: $black;
+    margin-left: 5px;
+  }
+}
+
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.sign-up-layout {
+  background: #fff;
+  width: 660px;
+  margin: 0 auto;
+  padding: 50px;
+
+  @media screen and (max-width: 567px) {
+    width: 350px;
+    padding: 20px;
+  }
+}
+
+.auth-title {
+  font-size: 24px;
+  color: $troy-blue;
+}
